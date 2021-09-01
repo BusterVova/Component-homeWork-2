@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import SearchStatus from "./searchStatus";
 import api from "../API";
 import Users from "./users";
-
 /*  */
 
 const App = () => {

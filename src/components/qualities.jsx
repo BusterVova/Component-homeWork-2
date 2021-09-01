@@ -1,5 +1,6 @@
 import React from "react";
-let qualityClasses = "badge bg-";
+import PropTypes from "prop-types";
+const qualityClasses = "badge bg-";
 const Qualities = ({ qualities }) => {
   return (
     <>
@@ -17,6 +18,9 @@ const Qualities = ({ qualities }) => {
       </td>
     </>
   );
+};
+Qualities.propTypes = {
+  qualities: PropTypes.array,
 };
 
 export default Qualities;

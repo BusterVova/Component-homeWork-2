@@ -1,6 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 const SearchStatus = ({ users }) => {
-  let searchClasses = "badge bg-";
+  const searchClasses = "badge bg-";
 
   const ClassChanger = () => {
     let titleclasses = searchClasses;
@@ -23,5 +25,7 @@ const SearchStatus = ({ users }) => {
     </h2>
   );
 };
-
+SearchStatus.propTypes = {
+  users: PropTypes.array,
+};
 export default SearchStatus;

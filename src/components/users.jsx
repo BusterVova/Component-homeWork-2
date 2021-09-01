@@ -1,6 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import User from "./user";
-const Users = ({ users, onDelete }) => {
+import { paginate } from "./utils/paginate";
+import Pagination from "./pagination";
+import PropTypes from "prop-types";
+
+const Users = ({ users: allUsers, onDelete }) => {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const count = allUsers.length;
+
+  const pageSize = 4;
+
+  const handlePageChange = (pageIndex) => {
+    console.log("pageIndex", pageIndex);
+    setCurrentPage(pageIndex);
+  };
+
+  const users = paginate(allUsers, currentPage, pageSize);
   return (
     <>
       <table className="table">
@@ -16,19 +32,24 @@ const Users = ({ users, onDelete }) => {
           </tr>
         </thead>
         <tbody>
-          {users.map(
-            (
-              element //можно сделать деструктризацию
-            ) => (
-              <tr key={element._id}>
-                <User user={element} onDelete={onDelete} />
-              </tr>
-            )
-          )}
+          {users.map((element) => (
+            <tr key={element._id}>
+              <User user={element} onDelete={onDelete} />
+            </tr>
+          ))}
         </tbody>
       </table>
+      <Pagination
+        itemsCount={count}
+        pageSize={pageSize}
+        onPageChange={handlePageChange}
+        currentPage={currentPage}
+      />
     </>
   );
 };
-
+Users.propTypes = {
+  users: PropTypes.array,
+  onDelete: PropTypes.func,
+};
 export default Users;
