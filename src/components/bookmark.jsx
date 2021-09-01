@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 const Bookmark = () => {
-  const [path, setPath] = useState(false);
+  const [path, setPath] = useState(true);
   const bookmarkChanger = () => {
     setPath(!path);
   };
