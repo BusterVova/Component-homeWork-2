@@ -7,7 +7,6 @@ const Pagination = ({ onPageChange, itemsCount, pageSize, currentPage }) => {
   if (pageCount === 1) {
     return null;
   }
-  console.log({ currentPage });
   const pages = _.range(1, pageCount + 1);
   return (
     <nav aria-label="...">
