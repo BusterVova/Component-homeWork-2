@@ -2,7 +2,7 @@ import React from "react";
 import Qualities from "./qualities";
 import Bookmark from "./bookmark";
 import PropTypes from "prop-types";
-
+import DeleteButton from "./deleteButton";
 const User = ({ user, onDelete }) => {
   return (
     <>
@@ -15,13 +15,7 @@ const User = ({ user, onDelete }) => {
         <Bookmark />
       </td>
       <td>
-        <button
-          onClick={() => onDelete(user._id)}
-          type="button"
-          className="btn btn-danger"
-        >
-          Delete
-        </button>
+        <DeleteButton user={user} onDelete={onDelete} />
       </td>
     </>
   );
