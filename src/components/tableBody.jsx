@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import _ from "lodash";
 import Qualities from "./qualities";
+//
 const TableBody = ({ data, columns }) => {
   return (
     <tbody>

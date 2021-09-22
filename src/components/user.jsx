@@ -3,6 +3,7 @@ import Qualities from "./qualities";
 import Bookmark from "./bookmark";
 import PropTypes from "prop-types";
 import DeleteButton from "./deleteButton";
+//
 const User = ({ user, onDelete }) => {
   return (
     <>

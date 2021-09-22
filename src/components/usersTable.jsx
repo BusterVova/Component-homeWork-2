@@ -18,6 +18,7 @@ const UserTable = ({ users, onSort, selectedSort, onDelete }) => {
       component: <DeleteButton user={users} onDelete={onDelete} />,
     },
   };
+  //
   return (
     <table className="table">
       <TableHeader {...{ onSort, selectedSort, columns }} />
