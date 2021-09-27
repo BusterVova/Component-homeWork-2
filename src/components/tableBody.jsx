@@ -19,7 +19,9 @@ const TableBody = ({ data, columns }) => {
             }
             return (
               <td key={column}>
-                {columns[column].component || _.get(item, columns[column].path)}
+                {columns[column]?.component
+                  ? columns[column].component(item._id)
+                  : _.get(item, columns[column].path)}
               </td>
             );
           })}
