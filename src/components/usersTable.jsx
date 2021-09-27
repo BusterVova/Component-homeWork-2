@@ -4,7 +4,9 @@ import PropTypes from "prop-types";
 import TableHeader from "./tableHeader";
 import TableBody from "./tableBody";
 import Bookmark from "./bookmark";
-import DeleteButton from "./deleteButton";
+// import DeleteButton from "./deleteButton";
+/* eslint-disable no-eval */
+
 const UserTable = ({ users, onSort, selectedSort, onDelete }) => {
   const columns = {
     name: { path: "name", name: "Имя" },
@@ -12,10 +14,26 @@ const UserTable = ({ users, onSort, selectedSort, onDelete }) => {
     professions: { path: "profession.name", name: "Профессия" },
     completedMeetings: { path: "completedMeetings", name: "Встретился раз" },
     rate: { path: "rate", name: "Оценка" },
-    bookmark: { path: "bookmark", name: "Избранное", component: <Bookmark /> },
+    bookmark: {
+      path: "bookmark",
+      name: "Избранное",
+      // eslint-disable-next-line
+      component: () => <Bookmark />,
+    },
     delete: {
       name: "Кнопка",
-      component: <DeleteButton user={users} onDelete={onDelete} />,
+      component: (id) => {
+        // console.log(id);
+        return (
+          <button
+            onClick={() => onDelete(id)}
+            type="button"
+            className="btn btn-danger"
+          >
+            Delete
+          </button>
+        );
+      },
     },
   };
   //
