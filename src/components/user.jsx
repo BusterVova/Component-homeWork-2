@@ -3,11 +3,15 @@ import Qualities from "./qualities";
 import Bookmark from "./bookmark";
 import PropTypes from "prop-types";
 import DeleteButton from "./deleteButton";
-//
+// import { Route, Link } from "react-router-dom";
+
 const User = ({ user, onDelete }) => {
+  console.log(user.name);
   return (
     <>
-      <th>{user.name}</th>
+      <th>
+        <a>{user.name}</a>
+      </th>
       <Qualities qualities={user.qualities} />
       <td>{user.profession.name}</td>
       <td>{user.completedMeetings}</td>

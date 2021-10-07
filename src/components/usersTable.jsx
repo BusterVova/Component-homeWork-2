@@ -23,7 +23,6 @@ const UserTable = ({ users, onSort, selectedSort, onDelete }) => {
     delete: {
       name: "Кнопка",
       component: (id) => {
-        // console.log(id);
         return (
           <button
             onClick={() => onDelete(id)}
@@ -36,7 +35,6 @@ const UserTable = ({ users, onSort, selectedSort, onDelete }) => {
       },
     },
   };
-  //
   return (
     <table className="table">
       <TableHeader {...{ onSort, selectedSort, columns }} />
