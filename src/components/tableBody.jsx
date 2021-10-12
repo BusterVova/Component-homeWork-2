@@ -22,13 +22,10 @@ const TableBody = ({ data, columns }) => {
               );
             }
             return (
-              // eslint-disable-next-line react/jsx-no-comment-textnodes
               <td key={column}>
                 {columns[column]?.component ? (
-                  // eslint-disable-next-line multiline-ternary
                   columns[column].component(item._id)
-                ) : // eslint-disable-next-line multiline-ternary
-                columns[column].path === "name" ? (
+                ) : columns[column].path === "name" ? (
                   <Link to={`/users/${item._id}`}>
                     {_.get(item, columns[column].path)}
                   </Link>
