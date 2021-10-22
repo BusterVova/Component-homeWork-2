@@ -9,9 +9,6 @@ const App = () => {
     setUsers(users.filter((item) => item._id !== userId));
   };
   useEffect(() => {
-    // api.users.getById("67rdca3eeb7f6fgeed471815").then((data) => {
-    //   console.log(data);
-    // });
     api.users.fetchAll().then((data) => {
       setUsers(data);
       setLoaded(true);

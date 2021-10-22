@@ -2,12 +2,11 @@
 import React, { useState, useEffect } from "react";
 import api from "../API";
 import { Link } from "react-router-dom";
-// import * as ReactBootstrap from "react-bootstrap";
 const oneUser = ({ match }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
+  const userId = match.params.id;
   useEffect(() => {
-    const userId = match.params.id;
     api.users.getById(userId).then((value) => {
       setUser(value);
       setLoading(true);
@@ -27,8 +26,8 @@ const oneUser = ({ match }) => {
         ))}
         <p>completedMeetings:{user.completedMeetings}</p>
         <h2>Rate: {user.rate}</h2>
-        <Link to="/users">
-          <button>Все пользователи</button>
+        <Link to={`/users/${userId}/edit`}>
+          <button>Изменить</button>
         </Link>
       </>
     ) : null
