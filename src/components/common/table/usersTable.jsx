@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 // import User from "./user";
 import TableHeader from "./tableHeader";
 import TableBody from "./tableBody";
-import Bookmark from "./bookmark";
+import Bookmark from "../bookmark";
 // import DeleteButton from "./deleteButton";
 /* eslint-disable no-eval */
 

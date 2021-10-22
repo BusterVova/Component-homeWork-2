@@ -3,7 +3,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import _ from "lodash";
-import Qualities from "./qualities";
+import Qualities from "../../ui/qualities/qualities";
 import { Link } from "react-router-dom";
 
 //

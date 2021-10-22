@@ -2,12 +2,12 @@
 /* eslint-disable no-unneeded-ternary */
 import React, { useState, useEffect } from "react";
 import { paginate } from "./utils/paginate";
-import Pagination from "./pagination";
+import Pagination from "./common/pagination";
 import PropTypes from "prop-types";
-import GroupList from "./groupList";
+import GroupList from "./common/groupList";
 import api from "../API";
-import SearchStatus from "./searchStatus";
-import UserTable from "./usersTable";
+import SearchStatus from "./ui/searchStatus";
+import UserTable from "./common/table/usersTable";
 import _ from "lodash";
 import Search from "./search";
 const Users = ({ users: allUsers, onDelete }) => {
@@ -60,7 +60,6 @@ const Users = ({ users: allUsers, onDelete }) => {
   const count = filteredUsers.length;
 
   const sortedUsers = _.orderBy(filteredUsers, [sortBy.path], [sortBy.order]);
-  // console.log(sortedUsers.length);
   const users = selectedProf
     ? paginate(sortedUsers, currentPage, pageSize)
     : typedUsers;
